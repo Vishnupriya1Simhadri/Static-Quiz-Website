@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple quiz 2</title>
+    <style>
+        body {
+            background-image: url('image.jpg');
+            background-size: cover; 
+            background-position: center;
+            }       
+         .container {
+            top:50%;
+            left:50%;
+            border: 270px solid rgb(6, 6, 6);
+            border-radius: 10px;
+            width: 60%;
+            align-items: center;
+            padding: 20px;
+            display: none;
+        }
+        button {
+            margin-top: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p style="color: rgb(246, 7, 134);font-size: 25px;">WHAT IS HTML?</p>
+        <p style="color: white;font-size: 18px;">
+        <input type="radio" name="quiz" id="correct1">Hyper text markup language<br>
+        <input type="radio" name="quiz">Hiper text making language<br>
+        <input type="radio" name="quiz">Hyper test making language<br>
+        <input type="radio" name="quiz">Hyper test markup language<br>
+        </p>
+        <button class="next" onclick="next(1)">NEXT</button>
+    </div>
+    <div class="container">
+        <p style="color: rgb(246, 7, 134);font-size: 25px;">WHAT IS CSS</p>
+        <p style="color: white;font-size: 18px;">
+        <input type="radio" name="question2" >Cascading steel sheets<br>
+        <input type="radio" name="question2" id="correct2">Cascading style sheets<br>
+        <input type="radio" name="question2">Calcualting stylee sheets<br>
+        <input type="radio" name="question2">Calander stylee sheets sh<br>
+        </p>
+        <button class="next" onclick="next(2)">NEXT</button>
+    </div>
+    <div class="container">
+        <p style="color:rgb(246,7,134);font-size: 25px;">What is the purpose of JavaScript in web development?</p>
+        <p style="color: white;font-size: 18px;">
+            <input type="radio" name="quiz5">To structure the content<br>
+            <input type="radio" name="quiz5">To style the webpage<br>
+            <input type="radio" name="quiz5">To manage the database<br>
+            <input type="radio" name="quiz5" id="correct3">To add interactivity to the webpage<br>
+        </p>
+        <button class="next" onclick="next(3)">NEXT</button>
+    </div>
+    <div class="container">
+        <p style="color: rgb(246,7,134);font-size: 25px;">What does the acronym API stand for?</p>
+        <p style="color: white;font-size: 18px;">
+            <input type="radio" name="quiz4">Application Protocol Interface<br>
+            <input type="radio" name="quiz4" id="correct4">Application Programming Interface<br>
+            <input type="radio" name="quiz4">Automated Program Interface<br>
+            <input type="radio" name="quiz4">Advanced Programming Interface<br>
+        </p>
+        <button class="next" onclick="next(4)">NEXT</button>
+    </div>
+    <div class="container">
+        <p style="color: rgb(246, 7, 134);font-size: 25px;">WHEN IS PHP?</p>
+        <p style="color: white;font-size: 18px;">
+        <input type="radio" name="question3" >Preprocessor hypertext<br>
+        <input type="radio" name="question3">Hyper text processor<br>
+        <input type="radio" name="question3">Hyperlink preprocessor<br>
+        <input type="radio" name="question3" id="correct5">Hypertext preprocessor<br>
+        </p>
+        <button onclick="result()">SUBMIT QUIZ</button>
+    </div>
+    <script>
+        
+        document.getElementsByClassName('container')[0].style.display = "block";
+
+        function next(id) {
+            document.getElementsByClassName('container')[id-1].style.display = "none";
+            document.getElementsByClassName('container')[id].style.display = "block";
+        }
+        function result() {
+            var score = 0;
+            if (document.getElementById('correct1').checked) {
+                score++;
+            }
+            if (document.getElementById('correct2').checked) {
+                score++;
+            }
+            if (document.getElementById('correct3').checked) {
+                score++;
+            }
+            if (document.getElementById('correct4').checked) {
+                score++;
+            }
+            if (document.getElementById('correct5').checked) {
+                score++;
+            }
+            alert("your score is: "+ score);
+        }
+    </script>
+</body>
+</html>
